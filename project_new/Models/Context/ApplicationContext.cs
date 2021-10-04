@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 namespace project_new.Models.Context
 {
     public class ApplicationContext : IdentityDbContext<User>
-    {
+    {   //мы передаем параметры подключения
+        //в контекст данных извне через конструктор с параметром типа DbContextOptions:
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
+            
         }
+        
+
     }
 }
